@@ -5,6 +5,7 @@ subtitle:       "A podcast technologies and development processes."
 url:            "http://lambdaclub.net"
 language:       ru-RU
 author:         Экстраполяция IT
+owner:          Alexey Osipenko
 copyright:      "CC BY 4.0"
 
 # Markdown settings
