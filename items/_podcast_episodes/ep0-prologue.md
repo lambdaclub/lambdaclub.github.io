@@ -6,7 +6,7 @@ excerpt:
   Мы решили поэкспериментировать и выпустить пилотный выпуск подкаста c названием «Лямбда Подкаст». В нём мы, редакцией «Экстраполяции», успели поговорить о двух темах.
 summary:
   Пилотный выпуск подкаста c названием «Лямбда Подкаст» в рамках канала «Экстраполяция IT» (https://t.me/itextrapolation)
-duration: "55:05"
+duration: "00:55:05"
 keywords: development, it, technology
 file: https://cimon.io/lambdaclub/lambda-podcast-000.mp3
 length: 105751117
