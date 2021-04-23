@@ -63,7 +63,7 @@
     background: $error-color;
     color: lighten($error-color, 35%);
     .text-gray {
-      color: scale-color($error-color, $saturation: 80%, $lightness: 70%, $alpha: .4);
+      color: scale-color($error-color, $saturation: 80%, $lightness: 70%, $alpha: 40%);
     }
   }
 }
