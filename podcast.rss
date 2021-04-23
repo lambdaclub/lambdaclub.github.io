@@ -40,9 +40,6 @@
 				<description>{{ post.excerpt | xml_escape }}</description>
 				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
 				<enclosure url="{{ post.file }}" length="{{ post.length }}" type="audio/mp3"/>
-				<media:content url="{{ post.file }}" length="{{ post.length }}" type="audio/mp3" isDefault="true" medium="audio">
-					<media:title type="plain">{{ post.episode }}: {{ post.title }}</media:title>
-				</media:content>				
 				<itunes:author>{{ site.author }}</itunes:author>
 				<itunes:title>{{ site.title }}: {{ post.title }}</itunes:title>
 				<itunes:episode>{{ post.episode }}</itunes:episode>
