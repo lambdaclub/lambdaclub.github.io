@@ -10,6 +10,7 @@ duration: "00:52:13"
 keywords: development, it, technology
 file: https://cimon.io/lambdaclub/lambda-podcast-001.mp3
 length: 100247430
+episode: 1
 ---
 
 Во втором по счёту и первым по номеру Лямбда-подкасте мы поговорили о хорошем README-файле, управлением доступами и правильных собеседованиях. Получилось весьма интересно и познавательно.
