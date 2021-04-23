@@ -8,7 +8,7 @@ summary:
   Первый выпуск подкаста «Лямбда Подкаст» в рамках канала «Экстраполяция IT» (https://t.me/itextrapolation)
 duration: "52:13"
 keywords: development, it, technology
-file: https://cimon.io/lambdaclub/lambda-podcast-000.mp3
+file: https://cimon.io/lambdaclub/lambda-podcast-001.mp3
 ---
 
 Во втором по счёту и первым по номеру Лямбда-подкасте мы поговорили о хорошем README-файле, управлением доступами и правильных собеседованиях. Получилось весьма интересно и познавательно.
