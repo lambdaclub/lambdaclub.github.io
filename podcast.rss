@@ -36,9 +36,6 @@
 				<link>{{ post.file | absolute_url }}</link>
 				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
 				<description>{{ post.excerpt | xml_escape }}</description>
-				<content:encoded><![CDATA[
-					{{ post.excerpt | xml_escape }}
-				]]></content:encoded>
 				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
 				<enclosure url="{{ post.file }}" length="{{ post.length }}" type="audio/mp3"/>
 				<itunes:author>{{ site.author }}</itunes:author>
