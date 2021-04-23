@@ -10,6 +10,7 @@ duration: "00:55:05"
 keywords: development, it, technology
 file: https://cimon.io/lambdaclub/lambda-podcast-000.mp3
 length: 105751117
+episode: 0
 ---
 
 Мы решили поэкспериментировать и выпустить пилотный выпуск подкаста c названием «Лямбда Подкаст» и в нём мы, редакцией «Экстраполяции», успели поговорить о двух темах.
