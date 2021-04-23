@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<ul class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="{{ "/" | relative_url }}">Home</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="{{ " /" | relative_url }}">Lambda Night Show</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="#">{{ page.title }}</a>
+  </li>
+</ul>
+
+<article>
+  <p class="post-meta">
+    <time datetime="{{ page.date }}">{{ page.date | date: site.date_format }}</time>
+  </p>
+
+  <h1>{{ page.title }}</h1>
+
+  {{ content }}
+</article>

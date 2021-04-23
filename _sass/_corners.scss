@@ -1,0 +1,34 @@
+.with-corner {
+  position: relative;
+
+  .corner {
+    position: absolute;
+    top: 0;
+
+    &:after {
+      content: attr(data-text);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: calc(-.5rem + 1px);
+      top: calc(-1rem - 1px);
+      font-size: .6rem;
+    }
+  }
+
+  .corner-left {
+    left: 0;
+    border-top: 1rem solid;
+    border-right: 1rem solid;
+    border-left-color: $bg-color-dark;
+    border-right-color: transparent !important;
+  }
+
+  .corner-right {
+    right: 0;
+    border-top: 1rem solid;
+    border-left: 1rem solid;
+    border-right-color: $bg-color-dark;
+    border-left-color: transparent !important;
+  }
+}

@@ -1,0 +1,49 @@
+---
+layout: home
+---
+
+{%- if site.podcast_episodes.size > 0 -%}
+  <div class="container" id="podcasts">
+    <h2>Lambda Podcast</h2>
+
+    <ul>
+      {%- for episode in site.podcast_episodes reversed -%}
+      <li>
+        <span>{{- episode.date | date: site.date_format -}}</span>
+        <a href="{{ episode.url | relative_url }}">{{ episode.title }}</a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif -%}
+
+
+{%- if site.show_episodes.size > 0 -%}
+  <div class="container" id="night-show">
+    <h2>Lambda Night Show</h2>
+
+    <ul>
+      {%- for episode in site.show_episodes reversed -%}
+      <li>
+        <span>{{- episode.date | date: site.date_format -}}</span>
+        <a href="{{ episode.url | relative_url }}">{{ episode.title }}</a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif -%}
+
+{%- if site.favorite_posts.size > 0 -%}
+  <div class="container" id="favorite-posts">
+    <h2>Избранные посты</h2>
+
+    <ul>
+      {%- for episode in site.favorite_posts reversed -%}
+      <li>
+        <span>{{- episode.date | date: site.date_format -}}</span>
+        <a href="{{ episode.url | relative_url }}">{{ episode.title }}</a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif -%}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: "en" }}">
+  {%- include head.html -%}
+  <body a="{{ site.theme_config.appearance | default: "auto" }}">
+    <div class="layout off-canvas off-canvas-sidebar-show">
+      <a class="off-canvas-toggle btn btn-primary btn-action" href="#menu">
+        <i class="icon icon-menu"></i>
+      </a>
+
+      <div id="menu" class="layout-sidebar off-canvas-sidebar">
+        <div class="layout-brand">
+          <a href="{{ '/' | relative_url }}">
+            Экстраполяция IT
+          </a>
+        </div>
+        <ul class="menu menu-nav layout-nav">
+          {%- if site.podcast_episodes.size > 0 -%}
+            <li class="menu-item"><a href="{{ '/#podcasts' | relative_url }}">«Lambda Podcast»</a></li>
+          {%- endif -%}
+          {%- if site.show_episodes.size > 0 -%}
+            <li class="menu-item"><a href="{{ '/#night-show' | relative_url }}">«Lambda Night Show»</a></li>
+          {%- endif -%}
+          {%- if site.favorite_posts.size > 0 -%}
+            <li class="menu-item"><a href="{{ '/#favorite-posts' | relative_url }}">Избранные посты</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <a class="off-canvas-overlay" href="#close"></a>
+
+      <main class="layout-content off-canvas-content" aria-label="Content">
+        {{ content }}
+      </main>
+    </div>
+  </body>
+</html>

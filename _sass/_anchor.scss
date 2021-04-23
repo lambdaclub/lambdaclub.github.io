@@ -1,0 +1,26 @@
+.anchor {
+  visibility: hidden;
+  margin-left: .2rem;
+  padding: 0 .2rem;
+  display: inline-block;
+
+  &:after {
+    content: '#';
+  }
+}
+
+.anchor-label {
+  display: inline;
+  width: 0;
+  height: 0;
+  position: relative;
+  top: -3em;
+
+  &:target + .panel {
+    box-shadow: 0 .25rem 1rem rgba($dark-color, .15);
+  }
+}
+
+*:hover > .anchor {
+  visibility: visible;
+}

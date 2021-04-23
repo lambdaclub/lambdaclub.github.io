@@ -1,0 +1,99 @@
+// Dropdown
+.dropdown {
+  display: inline-block;
+  position: relative;
+
+  .dropdown-overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0);
+    z-index: 200;
+
+    @include respond-to(xs, sm, md) {
+      background: rgba(0,0,0,.1);
+
+      &[data-content] {
+        & ~ .menu {
+          bottom: 4em;
+          max-height: calc(90vh - 2em);
+        }
+
+        &:after {
+          @include shadow-variant(.05rem);
+          border-radius: $border-radius;
+          background: $bg-color-light;
+          color: $gray-color;
+
+          position: fixed;
+          bottom: $layout-spacing-lg;
+          width: 90vw;
+          left: 5vw;
+          right: 5vw;
+
+          content: attr(data-content);
+          display: inline-block;
+          padding: $unit-2 $unit-4;
+        }
+      }
+    }
+  }
+
+  .menu {
+    display: none;
+    overflow-y: auto;
+
+    @include respond-to(lg, xl) {
+      animation: slide-down .15s ease 1;
+      position: absolute;
+      max-height: 50vh;
+      left: 0;
+      right: auto;
+      top: 100%;
+    }
+    @include respond-to(xs, sm, md) {
+      animation: slide-up .15s ease 1;
+      position: fixed;
+      width: 90vw;
+      max-height: 90vh;
+      overflow-y: auto;
+      bottom: $layout-spacing-lg;
+      top: auto;
+      left: 5vw;
+      right: 5vw;
+    }
+  }
+
+  &.dropdown-right {
+    .menu {
+      @include respond-to(lg, xl) {
+        left: auto;
+        right: 0;
+      }
+
+      @include respond-to(xs, sm, md) {
+        left: 5vw;
+        right: 5vw;
+      }
+    }
+  }
+
+  &.active > .menu, .dropdown-toggle:focus ~ .menu, .menu:hover {
+    display: block;
+  }
+
+  &.active > .dropdown-overlay, .dropdown-toggle:focus ~ .dropdown-overlay {
+    display: block;
+  }
+
+  // Fix dropdown-toggle border radius in button groups
+  .btn-group {
+    .dropdown-toggle:nth-last-child(2) {
+      border-bottom-right-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+  }
+}

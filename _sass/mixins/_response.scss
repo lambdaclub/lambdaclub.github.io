@@ -1,0 +1,46 @@
+@import '../functions';
+@import '../variables';
+
+// $size-xs
+// $size-sm
+// $size-md
+// $size-lg
+// $size-xl
+
+$media-set: (
+  xs: (max: $size-xs),
+  sm: (min: $size-xs, max: $size-sm),
+  md: (min: $size-sm, max: $size-md),
+  lg: (min: $size-md, max: $size-lg),
+  xl: (min: $size-lg),
+  xxl: (min: $size-2x),
+
+  mobile: (max: $size-md),
+  portative: (min: $size-xs, max: $size-md),
+  desktop: (min: $size-md),
+  all:  (max: $size-xl)
+);
+
+@mixin respond-to($medias...) {
+  $result: ();
+  @each $media in $medias {
+    $res: map-get($media-set, $media);
+    $m: ("screen");
+
+    @if map-has-key($res, min) {
+      $m: append($m, "(min-width: #{map-get($res, min)})");
+    }
+
+    @if map-has-key($res, max) {
+      $m: append($m, "(max-width: #{map-get($res, max)})");
+    }
+
+    $result: append($result, to-string($m, ' and '), comma);
+  }
+  // @media #{$result} {
+  //   body:not(.sidebar-open) #{if(&, "&", "*")} {
+  //     @content;
+  //   }
+  // }
+  @media #{$result} { @content; }
+}

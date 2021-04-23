@@ -1,0 +1,89 @@
+// -------------- THEME SWITCHER -------------- //
+@mixin dark-appearance {
+  filter: invert(1);
+
+  img {
+    filter: invert(1);
+
+    &.ioda { filter: invert(0); }
+  }
+}
+
+body[a="dark"] { @include dark-appearance; }
+
+
+@media (prefers-color-scheme: dark) {
+  body[a="auto"] { @include dark-appearance; }
+}
+
+// Variables and mixins
+@import "functions";
+@import "variables";
+@import "mixins";
+
+/*! Spectre.css v#{$version} | MIT License | github.com/picturepan2/spectre */
+// Reset and dependencies
+@import "normalize";
+@import "base";
+
+// Elements
+@import "typography";
+@import "asian";
+@import "tables";
+@import "buttons";
+@import "forms";
+@import "labels";
+@import "codes";
+@import "media";
+
+// Layout
+@import "layout";
+@import "columns";
+@import "hero";
+@import "navbar";
+
+// Components
+@import "accordions";
+@import "avatars";
+@import "anchor";
+@import "badges";
+@import "breadcrumbs";
+@import "bars";
+@import "cards";
+@import "chips";
+@import "corners";
+@import "dropdowns";
+@import "empty";
+@import "lists";
+@import "menus";
+@import "modals";
+@import "navs";
+@import "pagination";
+@import "panels";
+@import "popovers";
+@import "steps";
+@import "tabs";
+@import "tiles";
+@import "toasts";
+@import "tooltips";
+
+// Utility classes
+@import "animations";
+@import "utilities";
+
+// Experimentals
+@import "autocomplete";
+@import "calendars";
+@import "carousels";
+@import "comparison-sliders";
+@import "filters";
+@import "meters";
+@import "off-canvas";
+@import "parallax";
+@import "progress";
+@import "sliders";
+@import "timelines";
+@import "viewer-360";
+
+// Extensions
+@import "stylish";

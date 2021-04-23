@@ -1,0 +1,185 @@
+// Core variables
+$version: "0.5.8";
+
+// Core features
+$rtl: false;
+
+// Core colors
+$themes: (
+  (theme-color-1: #5755d9, theme-color-2: #f1f1fc, theme-color-3: #303742, theme-color-4: #fff),
+  (theme-color-1: #5c4f17, theme-color-2: #f0ebc6, theme-color-3: #303742, theme-color-4: #fff),
+  (theme-color-1: #175748, theme-color-2: #99e6aa, theme-color-3: #303742, theme-color-4: #fff),
+  (theme-color-1: #27424d, theme-color-2: #9acce0, theme-color-3: #303742, theme-color-4: #fff),
+  (theme-color-1: #c78c19, theme-color-2: #e8e0c3, theme-color-3: #303742, theme-color-4: #fff),
+);
+$theme: 1;
+
+$theme-color-primary: map-get(nth($themes, $theme), theme-color-1);
+$theme-color-secondary: map-get(nth($themes, $theme), theme-color-2);
+$theme-color-black: map-get(nth($themes, $theme), theme-color-3);
+$theme-color-white: map-get(nth($themes, $theme), theme-color-4);
+
+// ***********************************
+
+$theme-color-lighty: darken($theme-color-primary, 10%);
+$theme-color-light: $theme-color-primary;
+$theme-color-lighten: lighten($theme-color-primary, 10%);
+$theme-color-darky: darken($theme-color-secondary, 10%);
+$theme-color-dark: $theme-color-secondary;
+$theme-color-darken: lighten($theme-color-secondary, 10%);
+
+$theme-color-gray: mix($theme-color-black, $theme-color-white);
+$theme-color-burnt: $theme-color-lighten;
+$theme-color-highlight: $theme-color-lighten;
+
+// ***********************************
+
+$primary-color: $theme-color-light;
+$secondary-color: $theme-color-dark;
+
+$primary-color-dark: $theme-color-lighty;
+$primary-color-light: $theme-color-lighten;
+$secondary-color-dark: $theme-color-darky;
+$secondary-color-light: $theme-color-darken;
+
+// Gray colors
+$dark-color: $theme-color-black;
+$white-color: $theme-color-white;
+
+$light-color: $theme-color-lighten;
+$gray-color: $theme-color-gray;
+$gray-color-dark: darken($gray-color, 30%);
+$gray-color-light: lighten($gray-color, 20%);
+
+$border-color: mix($theme-color-dark, $theme-color-white);
+$border-color-dark: darken($border-color, 8%);
+$border-color-light: lighten($border-color, 8%);
+
+$border-color-primary: $primary-color-dark;
+$border-color-primary-dark: darken($border-color-primary, 8%);
+$border-color-primary-light: lighten($border-color-primary, 8%);
+
+$border-color-secondary: $secondary-color;
+$border-color-secondary-dark: darken($border-color-secondary, 28%);
+$border-color-secondary-light: lighten($border-color-secondary, 28%);
+
+//$bg-color: lighten($secondary-color, 35%);
+$bg-color: $secondary-color;
+$bg-color-dark: darken($bg-color, 5%);
+$bg-color-gray: $gray-color;
+$bg-color-light: lighten($bg-color, 8%);
+$bg-color-primary: $primary-color;
+$bg-color-primary-dark: darken($bg-color-primary, 8%);
+$bg-color-primary-light: lighten($bg-color-primary, 8%);
+$bg-color-gray-dark: darken($bg-color-gray, 8%);
+$bg-color-gray-light: lighten($bg-color-gray, 8%);
+
+// Control colors
+$success-color: #32b643;
+$warning-color: #ffb700;
+$error-color: #e85600;
+
+// Other colors
+$code-color: $theme-color-burnt;
+$highlight-color: $theme-color-highlight;
+$body-bg: $white-color;
+$body-font-color: $theme-color-black;
+$link-color: $primary-color;
+$link-color-dark: darken($link-color, 10%);
+$link-color-light: lighten($link-color, 10%);
+
+// Fonts
+// Credit: https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
+$base-font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+$mono-font-family: "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace;
+$fallback-font-family: "Helvetica Neue", sans-serif;
+$cjk-zh-hans-font-family: $base-font-family, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", $fallback-font-family;
+$cjk-zh-hant-font-family: $base-font-family, "PingFang TC", "Hiragino Sans CNS", "Microsoft JhengHei", $fallback-font-family;
+$cjk-jp-font-family: $base-font-family, "Hiragino Sans", "Hiragino Kaku Gothic Pro", "Yu Gothic", YuGothic, Meiryo, $fallback-font-family;
+$cjk-ko-font-family: $base-font-family, "Malgun Gothic", $fallback-font-family;
+$body-font-family: $base-font-family, $fallback-font-family;
+
+// Unit sizes
+$unit-o: .05rem;
+$unit-h: .1rem;
+$unit-1: .2rem;
+$unit-2: .4rem;
+$unit-3: .6rem;
+$unit-4: .8rem;
+$unit-5: 1rem;
+$unit-6: 1.2rem;
+$unit-7: 1.4rem;
+$unit-8: 1.6rem;
+$unit-9: 1.8rem;
+$unit-10: 2rem;
+$unit-12: 2.4rem;
+$unit-16: 3.2rem;
+
+// Font sizes
+$html-font-size: 20px;
+$html-line-height: 1.5;
+$font-size: .8rem;
+$font-size-xs: .5srem;
+$font-size-sm: .7rem;
+$font-size-lg: .9rem;
+$line-height: 1.2rem;
+
+// Sizes
+$layout-spacing: $unit-2;
+$layout-spacing-sm: $unit-1;
+$layout-spacing-lg: $unit-4;
+$layout-padding-top: $layout-spacing-lg*1.5;
+$layout-padding-left: $layout-spacing-lg*2;
+$layout-padding-right: $layout-spacing-lg*2;
+$layout-padding-bottom: $layout-spacing-lg;
+$border-radius: $unit-h;
+$border-width: $unit-o;
+$border-width-lg: $unit-h;
+$control-size: $unit-9;
+$control-size-xs: $unit-5;
+$control-size-sm: $unit-7;
+$control-size-lg: $unit-10;
+$control-padding-x: $unit-2;
+$control-padding-x-xs: $unit-2 * .5;
+$control-padding-x-sm: $unit-2 * .75;
+$control-padding-x-lg: $unit-2 * 1.5;
+$control-padding-y: ($control-size - $line-height) / 2 - $border-width;
+$control-padding-y-xs: ($line-height - $control-size-xs) / 2 - $border-width;
+$control-padding-y-sm: ($control-size-sm - $line-height) / 2 - $border-width;
+$control-padding-y-lg: ($control-size-lg - $line-height) / 2 - $border-width;
+$control-icon-size: .8rem;
+
+$control-width-xs: 180px;
+$control-width-sm: 320px;
+$control-width-md: 640px;
+$control-width-lg: 960px;
+$control-width-xl: 1280px;
+
+// Fixed breakpoints
+$fixed-size-basic: 200px;
+$fixed-size-xl: $fixed-size-basic * 3;
+$fixed-size-lg: $fixed-size-basic * 2;
+$fixed-size-md: $fixed-size-basic * 1.5;
+$fixed-size-sm: $fixed-size-basic;
+$fixed-size-xs: $fixed-size-basic * 0.8;
+$fixed-size-xxs: $fixed-size-basic * 0.25;
+
+// Responsive breakpoints
+$size-xs: 480px;
+$size-sm: 631px;
+$size-md: 840px;
+$size-lg: 960px;
+$size-xl: 1280px;
+$size-2x: 1440px;
+
+$responsive-breakpoint: $size-xs;
+
+// Z-index
+$zindex-0: 1;
+$zindex-1: 100;
+$zindex-2: 200;
+$zindex-3: 300;
+$zindex-4: 400;
+
+// Speed
+$animation-speed: .2s;

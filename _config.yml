@@ -1,0 +1,51 @@
+title:          Экстраполяция IT
+email:          podcast@lambdaclub.net
+description:    "Podcast based t.me/itextrapolation community"
+subtitle:       "A podcast technologies and development processes."
+url:            "http://lambdaclub.net"
+language:       ru-RU
+author:         Alexey Osipenko
+copyright:      "CC BY 4.0"
+
+# Markdown settings
+markdown: kramdown
+
+exclude:
+  - README.md
+  - CNAME
+  - LICENSE
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Plugin settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+appearance: "auto" # can be "light", "dark" or "auto"
+date_format: "%Y-%m-%d" # customize how date is formatted
+google_analytics: "G-Y836D13S9B"
+
+feed:
+  collections:
+    podcast_episodes:
+      path: "/episodes.xml"
+
+collections_dir: items
+collections:
+  favorite_posts:
+    sort_by: date
+    permalink: /posts/:name
+    output: true
+  show_episodes:
+    sort_by: date
+    permalink: /lateshow/:name
+    output: true
+  podcast_episodes:
+    sort_by: date
+    permalink: /podcast/:name
+    output: true

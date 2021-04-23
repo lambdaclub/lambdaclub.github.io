@@ -1,0 +1,48 @@
+.styled-card, .styled-tile {
+  box-shadow: 0 .25rem 1rem rgba($dark-color, .15);
+}
+
+.hoverable-card, a.styled-card {
+  text-decoration: none;
+  &:hover {
+    outline: 1px solid $border-color-secondary-dark;
+    .card-header {
+      text-decoration: underline;
+    }
+  }
+}
+
+.styled-panel, .small-styled-panel {
+  position: relative;
+  &:after {
+    z-index: -1;
+    position: absolute;
+    content: " ";
+    bottom: 0;
+    width: 66%;
+    top: 80%;
+    max-width: 300px;
+
+    right: 0;
+    left: auto;
+    transform: skew(16deg) rotate(5deg);
+    transform-origin: 100% 100%;
+  }
+}
+
+.styled-panel {
+  &:after {
+    box-shadow: 0 10px 8px rgba($dark-color, .40);
+  }
+}
+
+.small-styled-panel {
+  &:after {
+    box-shadow: 0 10px 5px -5px rgba($dark-color, .40);
+  }
+}
+
+.unobtrusive-styled-panel {
+  box-shadow: 0 0 10px -5px rgba($dark-color, .40);
+}
+

@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<ul class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="{{ "/" | relative_url }}">Home</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="{{ "/" | relative_url }}">Lambda Podcast</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="#">{{ page.title }}</a>
+  </li>
+</ul>
+
+<article>
+  <p class="post-meta">
+    <time datetime="{{ page.date }}">{{ page.date | date: site.date_format }}</time>
+  </p>
+
+  <h1>{{ page.title }}</h1>
+
+  <div id="waveform"><span class="placeholder columns"><span class="column col-auto col-mx-auto"><span class="loading"></span></span></span></div>
+  <div class="columns">
+    <div class="column col-4 col-mx-auto">
+      <button class="btn"onclick="wavesurfer.skipBackward()">⏮ Backward</button>
+      <button class="btn btn-primary" onclick="wavesurfer.playPause()">▶️ Play / ⏸ Pause</button>
+      <button class="btn" onclick="wavesurfer.skipForward()">⏭ Forward</button>
+    </div>
+  </div>
+
+  {{ content }}
+</article>
+
+<script type="text/javascript">
+  var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: 'violet',
+    progressColor: 'purple'
+  });
+  wavesurfer.load('{{ page.file }}');
+  wavesurfer.on('ready', function () {
+    console.log(1);
+    document.querySelector('#waveform .loading').remove();
+  });
+
+</script>

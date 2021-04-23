@@ -1,0 +1,65 @@
+// Navs
+.nav {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: $unit-1 0;
+
+  .nav-item {
+    a {
+      color: $gray-color-dark;
+      padding: $unit-1 $unit-2;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+
+      &:focus,
+      &:hover {
+        color: $primary-color;
+
+        svg {
+          fill: $primary-color;
+        }
+      }
+
+      @include respond-to(xs) {
+        padding: $unit-1/2 $unit-1;
+      }
+
+      @include respond-to(all) {
+        padding-top: $unit-2;
+        padding-bottom: $unit-2;
+      }
+
+      svg {
+        transition: fill $animation-speed ease;
+        fill: $gray-color;
+      }
+    }
+    &.active {
+      & > a {
+        color: darken($gray-color-dark, 10%);
+        font-weight: bold;
+
+        &:focus,
+        &:hover {
+          color: $primary-color;
+
+          svg {
+            fill: $primary-color;
+          }
+        }
+
+        svg {
+          fill: darken($gray-color-dark, 10%);
+        }
+      }
+    }
+  }
+
+  & .nav {
+    margin-bottom: $unit-2;
+    margin-left: $unit-4;
+  }
+}

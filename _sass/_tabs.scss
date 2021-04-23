@@ -1,0 +1,98 @@
+// Tabs
+.tab {
+  align-items: center;
+  border-bottom: $border-width solid $border-color;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: $unit-1 0 ($unit-1 - $border-width) 0;
+
+  > * {
+    margin-top: 0;
+  }
+
+  .tab-item {
+    > a {
+      border-bottom: $border-width-lg solid transparent;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      margin: 0 $unit-2 0 0;
+      padding: $unit-2 $unit-3 $unit-2 - $border-width-lg $unit-3;
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        color: $link-color;
+
+        svg {
+          fill: $link-color
+        }
+      }
+
+      svg {
+        fill: $body-font-color;
+      }
+    }
+    &.active a,
+    a.active {
+      border-bottom-color: $primary-color;
+      color: $link-color;
+
+      svg {
+        fill: $link-color
+      }
+
+      &.btn-secondary {
+        color: $light-color;
+
+        svg {
+          fill: $light-color;
+        }
+      }
+    }
+
+    &.tab-right {
+      flex: 1 0 auto;
+      text-align: right;
+    }
+
+    &.tab-wide {
+      flex-grow: 1;
+    }
+
+    .btn-clear {
+      margin-top: -$unit-1;
+    }
+  }
+
+  &.tab-block {
+    .tab-item {
+      flex: 1 0 0;
+      text-align: center;
+
+      a {
+        margin: 0;
+      }
+
+      .badge {
+        &[data-badge]::after {
+          position: absolute;
+          right: $unit-h;
+          top: $unit-h;
+          transform: translate(0, 0);
+        }
+      }
+    }
+  }
+
+  &.tab-right {
+    justify-content: flex-end;
+  }
+
+  &:not(.tab-block) {
+    .badge {
+      padding-right: 0;
+    }
+  }
+}

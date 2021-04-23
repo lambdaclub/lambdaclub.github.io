@@ -1,0 +1,33 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  .list-item {
+    display: block;
+    padding-left: $layout-spacing-lg;
+    padding-right: $layout-spacing-lg;
+    &.target {
+      background: $bg-color;
+    }
+  }
+
+  &.list-styled {
+    .list-item {
+      border-bottom: 1px dashed $bg-color-dark;
+      padding-bottom: $layout-spacing-sm;
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &.panel-body {
+    .list-item {
+      margin-left: -$layout-spacing-lg;
+      margin-right: -$layout-spacing-lg;
+      padding-left: $layout-spacing-lg;
+      padding-right: $layout-spacing-lg;
+    }
+  }
+}
