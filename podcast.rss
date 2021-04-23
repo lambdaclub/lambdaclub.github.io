@@ -8,7 +8,7 @@
 		<title>{{ site.title }}</title>
 		<description>{{ site.description | xml_escape }}</description>
 		<link>{{ site.url }}</link>
-		<language>en-us</language>
+		<language>ru-RU</language>
 		<managingEditor>{{ site.email }} ({{ site.author }})</managingEditor>
 		<webMaster>{{ site.email }} ({{ site.author }})</webMaster>
 		<copyright>2019-{{ site.time | "%Y" }} {{ site.title }}</copyright>
@@ -24,15 +24,17 @@
 		<itunes:summary>{{ site.description | xml_escape }}</itunes:summary>
 		<itunes:keywords>{{ site.keywords }}</itunes:keywords>
 		<itunes:owner>
-			<itunes:name>{{ site.author }}</itunes:name>
+			<itunes:name>{{ site.owner }}</itunes:name>
 			<itunes:email>{{ site.email }}</itunes:email>
 		</itunes:owner>
+		<itunes:type>episodic</itunes:type>
 		<itunes:image href="{{ site.url }}/cover.jpg" />
 		<itunes:category text="Technology" />
 		<itunes:explicit>yes</itunes:explicit>
 		{% for post in site.podcast_episodes %}
 			<item>
 				<title>{{ post.title | xml_escape }}</title>
+				<category>Podcast</category>
 				<link>{{ post.file | absolute_url }}</link>
 				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
 				<description>{{ post.excerpt | xml_escape }}</description>
@@ -41,6 +43,7 @@
 				<itunes:author>{{ site.author }}</itunes:author>
 				<itunes:title>{{ site.title }}: {{ post.title }}</itunes:title>
 				<itunes:episode>{{ post.episode }}</itunes:episode>
+				<itunes:episodeType>full</itunes:episodeType>
 				<itunes:summary>{{ post.summary | xml_escape }}</itunes:summary>
 				<itunes:duration>{{ post.duration }}</itunes:duration>
 				<itunes:keywords>{{ post.keywords }}</itunes:keywords>
