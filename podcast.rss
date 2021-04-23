@@ -34,8 +34,8 @@
 		{% for post in site.podcast_episodes %}
 			<item>
 				<title>{{ post.title | xml_escape }}</title>
-				<category>Podcast</category>
 				<link>{{ post.file | absolute_url }}</link>
+				<category>Podcast</category>
 				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
 				<description>{{ post.excerpt | xml_escape }}</description>
 				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
