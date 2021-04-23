@@ -18,11 +18,16 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#272724">
   <meta name="msapplication-TileColor" content="#e4d59d">
-  <meta name="theme-color" content="#e4d59d">  
+  <meta name="theme-color" content="#e4d59d">
+  
+  <meta property="og:site_name" content="Lambdaclub.net" />
+  <meta property="og:title" content="{%- if page.title -%}{{ page.title }} - {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}" />
+  <meta name="twitter:image:src" content="{{ site.baseurl }}{% link assets/preview.png %}" />
+  <meta property="og:image" content="{{ site.baseurl }}{% link assets/preview.png %}" />
 
   <title>
     {%- if page.title -%}
-      {{ page.title }}
+      {{ page.title }} - {{ site.title }}
     {%- else -%}
       {{ site.title }}
     {%- endif -%}
